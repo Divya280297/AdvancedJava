@@ -80,7 +80,7 @@ public class LinkedList {
 			first = first.next;
 			return;
 		}
-		Node del = node.next;
+		Node del = node;
 		if(del.next != null) {
 			del.next.prev = del.prev;
 		}
@@ -88,7 +88,7 @@ public class LinkedList {
 		if(del.prev !=null) {
 			del.prev.next=del.next;
 		}
-		return;
+		//return;
 	}
 	public int size() {
 		int i = 0;
@@ -112,12 +112,10 @@ public class LinkedList {
 		l.addNode(1);
 		l.addNode(2);
 		l.addNode(3);
-		System.out.println(l.get(2));
 		l.display();
 		l.insert(5,1);
 		l.display();
 		l.remove(2);
 		l.display();
-		System.out.println(l.size());
 	}
 }
