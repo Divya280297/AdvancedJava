@@ -2,7 +2,7 @@ package node;
 
 public class Node {
 
-	int value;
+	String value;
 	Node next;
 	Node prev;
 }

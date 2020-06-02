@@ -4,7 +4,7 @@ public class LinkedList {
 
 	Node first;
 	Node last;
-	public void addNode(int val) {
+	public void addNode(String val) {
 		Node newNode = new Node();
 		newNode.value = val;
 		newNode.next = null;
@@ -25,7 +25,7 @@ public class LinkedList {
 		newNode.prev = last;
 		
 	}
-	public void insert(int val, int pos) {
+	public void insert(String val, int pos) {
 		Node newNode = new Node();
 		newNode.value=val;
 		newNode.next=null;
@@ -47,7 +47,7 @@ public class LinkedList {
 		newNode.prev=prev;
 		prev.next.prev = newNode;
 	}
-	public int get(int pos) {
+	public String get(int pos) {
 		int i = 0;
 		Node node = first;
 		while(i<pos) {
@@ -56,7 +56,7 @@ public class LinkedList {
 		}
 		return node.value;
 	}
-	public void set(int pos, int val)
+	public void set(int pos, String val)
 	{
 		int i = 0;
 		Node node = first;
@@ -99,23 +99,29 @@ public class LinkedList {
 		}
 		return i+1;
 	}
-	public void display() {
+	public void display(LinkedList l) {
+		
+	}
+	@Override
+	public String toString() {
+		String list = " ";
 		Node n =first;
 		while(n.next != null) {
-			System.out.println(n.value);
+			//System.out.println(n.value);
+			list+=n.value+'\t';
 			n = n.next;
 		}
-		System.out.println(n.value);
+		list+=n.value;
+		//System.out.println(n.value);
+		return list;
+		
 	}
 	public static void main(String args[]) {
 		LinkedList l = new LinkedList();
-		l.addNode(1);
-		l.addNode(2);
-		l.addNode(3);
-		l.display();
-		l.insert(5,1);
-		l.display();
-		l.remove(2);
-		l.display();
+		l.addNode("India");
+		l.addNode("USA");
+		l.addNode("Japan");
+		System.out.println(l.toString());
+		
 	}
 }
